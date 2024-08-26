@@ -1,0 +1,62 @@
+<!-- Here is the updated HTML calculator program with the numbers in the correct order: -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>simple Calculator</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+    <script>
+		function calculate() {
+			var screen = document.getElementById('screen');
+			var keys = document.querySelectorAll('.key');
+			var result = '';
+			
+			keys.forEach(function(key) {
+				key.addEventListener('click', function() {
+					var value = key.textContent;
+					if (value == '=') {
+						result = eval(screen.value);
+						screen.value = result;
+					} else if (value == 'C') {
+						screen.value = '';
+					} else {
+						screen.value += value;
+					}
+				});
+			});
+		}
+	</script>
+</head>
+<body>
+    
+	<div class="calculator">
+		<input id="screen" class="calculator-screen" type="text" readonly>
+		<div class="calculator-keys">
+            <button class="key key1">C</button>
+			<button class="key">1</button>
+			<button class="key">2</button>
+			<button class="key">3</button>
+			<button class="key">4</button>
+			<button class="key">5</button>
+			<button class="key">6</button>
+			<button class="key">7</button>
+			<button class="key">8</button>
+			<button class="key">9</button>
+			<button class="key">*</button>
+			<button class="key">0</button>
+            <button class="key">.</button>
+            <button class="key">+</button>
+            <button class="key">-</button>
+			
+			<button class="key k2">=</button>
+			
+			<button class="key">/</button>
+		</div>
+	</div>
+	<script>
+		calculate();
+	</script>
+</body>
+</html>
+
+<!-- This program creates a mobile calculator with the numbers in the correct order (1-9) and the operators (+, -, *, /) in their respective positions. -->
